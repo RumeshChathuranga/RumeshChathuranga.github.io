@@ -234,14 +234,17 @@
   }
 
   .profile_img {
-    filter: drop-shadow(0px 10px 20px rgba(49, 59, 172, 0.2)) drop-shadow(0px 20px 45px rgba(0, 0, 0, 0.12));
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
-    transition: all 0.3s ease-in-out;
+    width: 100%;
+    object-fit: contain;
+    z-index: 1;
+    opacity: 0.85;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+    transition: all 0.35s ease-in-out;
 
     &:hover {
       transform: scale(1.015);
-      filter: drop-shadow(0px 15px 30px rgba(49, 59, 172, 0.3)) drop-shadow(0px 25px 55px rgba(0, 0, 0, 0.18));
+      opacity: 1;
     }
   }
 
@@ -253,7 +256,7 @@
     z-index: 0;
     width: 100%;
     height: 90%;
-    filter: drop-shadow(0px 15px 30px rgba(49, 59, 172, 0.15));
+    filter: drop-shadow(0px 15px 30px rgba(49, 59, 172, 0.25)) drop-shadow(0px 25px 60px rgba(49, 59, 172, 0.15));
   }
 
   @media screen and (max-width: 1200px) {
