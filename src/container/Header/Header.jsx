@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { BsLinkedin, BsGithub, BsFacebook } from 'react-icons/bs';
 
 import { AppWrap } from '../../wrapper';
 import { images } from '../../constants';
@@ -35,8 +36,8 @@ const Header = () => (
         </div>
 
         <div className="tag-cmp app__flex">
-          <p className="p-text">BSc CSE Undergraduate</p>
-          <p className="p-text">Full-Stack & DevOps Developer</p>
+          <p className="p-text">BSc Computer Science & Engineering Undergraduate</p>
+          <p className="p-text">University of Moratuwa</p>
         </div>
       </div>
     </motion.div>
@@ -46,7 +47,6 @@ const Header = () => (
       transition={{ duration: 0.5, delayChildren: 0.5 }}
       className="app__header-img"
     >
-      <img src={images.profile} alt="profile_bg" />
       <motion.img
         whileInView={{ scale: [0, 1] }}
         transition={{ duration: 1, ease: 'easeInOut' }}
@@ -54,6 +54,7 @@ const Header = () => (
         alt="profile_circle"
         className="overlay_circle"
       />
+      <img src={images.profile} alt="profile_bg" className="profile_img" />
     </motion.div>
 
     <motion.div
@@ -61,10 +62,20 @@ const Header = () => (
       whileInView={scaleVariants.whileInView}
       className="app__header-circles"
     >
-      {[images.typescript, images.react, images.node].map((circle, index) => (
-        <div className="circle-cmp app__flex" key={`circle-${index}`}>
-          <img src={circle} alt="profile_bg" />
-        </div>
+      {[
+        { icon: <BsGithub />, link: 'https://github.com/RumeshChathuranga' },
+        { icon: <BsLinkedin />, link: 'https://www.linkedin.com/in/rumeshchathuranga' },
+        { icon: <BsFacebook />, link: 'https://www.facebook.com/rumarumesh1220' },
+      ].map((circle, index) => (
+        <a
+          href={circle.link}
+          target="_blank"
+          rel="noreferrer"
+          className="circle-cmp app__flex"
+          key={`circle-${index}`}
+        >
+          {circle.icon}
+        </a>
       ))}
     </motion.div>
   </div>

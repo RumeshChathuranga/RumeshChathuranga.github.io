@@ -104,50 +104,68 @@
   height: 100%;
   margin-left: 1rem;
 
-  div {
+  .circle-cmp {
     width: 100px;
     height: 100px;
     border-radius: 50%;
 
     background: var(--white-color);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
 
-    img {
-      width: 60%;
-      height: 60%;
+    img, svg {
+      width: 50%;
+      height: 50%;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 10px 25px rgba(49, 59, 172, 0.2);
     }
   }
 
   // circles with different height & width
 
-  div:nth-child(1) {
+  .circle-cmp:nth-child(1) {
     width: 100px;
     height: 100px;
+
+    svg {
+      color: #181717;
+    }
   }
 
-  div:nth-child(2) {
+  .circle-cmp:nth-child(2) {
     margin: 1.75rem;
     width: 150px;
     height: 150px;
+
+    svg {
+      color: #0077b5;
+    }
   }
 
-  div:nth-child(3) {
+  .circle-cmp:nth-child(3) {
     width: 70px;
     height: 70px;
+
+    svg {
+      color: #1877f2;
+    }
   }
 
   @media screen and (min-width: 2000px) {
-    div:nth-child(2) {
+    .circle-cmp:nth-child(2) {
       width: 400px;
       height: 400px;
     }
 
-    div:nth-child(3) {
+    .circle-cmp:nth-child(3) {
       width: 170px;
       height: 170px;
     }
 
-    div:nth-child(1) {
+    .circle-cmp:nth-child(1) {
       width: 200px;
       height: 200px;
     }
@@ -159,7 +177,7 @@
     flex-wrap: wrap;
     margin-left: 0;
 
-    div {
+    .circle-cmp {
       margin: 1rem;
     }
   }
@@ -180,6 +198,18 @@
     z-index: 1;
   }
 
+  .profile_img {
+    filter: drop-shadow(0px 10px 20px rgba(49, 59, 172, 0.2)) drop-shadow(0px 20px 45px rgba(0, 0, 0, 0.12));
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.015);
+      filter: drop-shadow(0px 15px 30px rgba(49, 59, 172, 0.3)) drop-shadow(0px 25px 55px rgba(0, 0, 0, 0.18));
+    }
+  }
+
   .overlay_circle {
     position: absolute;
     left: 0;
@@ -188,6 +218,7 @@
     z-index: 0;
     width: 100%;
     height: 90%;
+    filter: drop-shadow(0px 15px 30px rgba(49, 59, 172, 0.15));
   }
 
   @media screen and (max-width: 1200px) {
