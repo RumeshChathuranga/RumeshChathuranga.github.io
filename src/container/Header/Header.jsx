@@ -25,13 +25,13 @@ const Header = () => (
       className="app__header-info"
     >
       <div className="app__header-badge">
-        <div className="badge-cmp app__flex" style={{ padding: '1.5rem 2.5rem' }}>
+        <div className="badge-cmp app__flex">
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: 5 }}>
               <span>👋</span>
               <p className="p-text" style={{ marginLeft: 15 }}>Hello, I am</p>
             </div>
-            <h1 className="head-text" style={{ whiteSpace: 'nowrap' }}>Rumesh Chathuranga</h1>
+            <h1 className="head-text">Rumesh Chathuranga</h1>
           </div>
         </div>
 
