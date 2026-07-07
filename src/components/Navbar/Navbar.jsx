@@ -8,20 +8,6 @@ import './Navbar.scss';
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
-  const handleOpenMenu = (e) => {
-    if (e.type === 'touchend') {
-      e.preventDefault();
-    }
-    setToggle(true);
-  };
-
-  const handleCloseMenu = (e) => {
-    if (e.type === 'touchend') {
-      e.preventDefault();
-    }
-    setToggle(false);
-  };
-
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
@@ -37,18 +23,19 @@ const Navbar = () => {
       </ul>
 
       <div className="app__navbar-menu">
-        <HiMenuAlt4 onClick={handleOpenMenu} onTouchEnd={handleOpenMenu} />
+        <HiMenuAlt4 onClick={() => setToggle(true)} />
 
         {toggle && (
           <motion.div
-            whileInView={{ x: [300, 0] }}
+            initial={{ x: 300 }}
+            animate={{ x: 0 }}
             transition={{ duration: 0.85, ease: 'easeOut' }}
           >
-            <HiX onClick={handleCloseMenu} onTouchEnd={handleCloseMenu} />
+            <HiX onClick={() => setToggle(false)} />
             <ul>
               {['home', 'about', 'work', 'skills', 'gallery', 'contact'].map((item) => (
                 <li key={item}>
-                  <a href={`#${item}`} onClick={handleCloseMenu} onTouchEnd={handleCloseMenu}>
+                  <a href={`#${item}`} onClick={() => setToggle(false)}>
                     {item}
                   </a>
                 </li>

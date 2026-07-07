@@ -54,7 +54,13 @@ const Header = () => (
         alt="profile_circle"
         className="overlay_circle"
       />
-      <img src={images.profile} alt="profile_bg" className="profile_img" />
+      <img
+        src={`${process.env.PUBLIC_URL}/profile.webp`}
+        alt="profile_bg"
+        className="profile_img"
+        fetchpriority="high"
+        decoding="async"
+      />
     </motion.div>
 
     <motion.div
