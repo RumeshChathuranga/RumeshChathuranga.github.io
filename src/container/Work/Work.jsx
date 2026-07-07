@@ -11,6 +11,7 @@ const Work = () => {
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
+  const [categories, setCategories] = useState(['All']);
 
   useEffect(() => {
     const query = '*[_type == "works"]';
@@ -18,6 +19,19 @@ const Work = () => {
     client.fetch(query).then((data) => {
       setWorks(data);
       setFilterWork(data);
+
+      const uniqueTags = new Set();
+      data.forEach((work) => {
+        if (work.tags && Array.isArray(work.tags)) {
+          work.tags.forEach((tag) => {
+            if (tag && tag.trim()) {
+              uniqueTags.add(tag.trim());
+            }
+          });
+        }
+      });
+      const sortedTags = Array.from(uniqueTags).sort();
+      setCategories(['All', ...sortedTags]);
     });
   }, []);
 
@@ -31,7 +45,7 @@ const Work = () => {
       if (item === 'All') {
         setFilterWork(works);
       } else {
-        setFilterWork(works.filter((work) => work.tags.includes(item)));
+        setFilterWork(works.filter((work) => work.tags && work.tags.includes(item)));
       }
     }, 500);
   };
@@ -41,7 +55,7 @@ const Work = () => {
       <h2 className="head-text">My Professional <span>Projects</span> Portfolio</h2>
 
       <div className="app__work-filter">
-        {['Web App', 'React JS', 'DevOps & Cloud', 'All'].map((item, index) => (
+        {categories.map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
@@ -98,9 +112,11 @@ const Work = () => {
               <h4 className="bold-text">{work.title}</h4>
               <p className="p-text" style={{ marginTop: 10 }}>{work.description}</p>
 
-              <div className="app__work-tag app__flex">
-                <p className="p-text">{work.tags[0]}</p>
-              </div>
+              {work.tags && work.tags.length > 0 && (
+                <div className="app__work-tag app__flex">
+                  <p className="p-text">{work.tags[0]}</p>
+                </div>
+              )}
             </div>
           </div>
         ))}
