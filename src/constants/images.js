@@ -1,4 +1,5 @@
 import email from '../assets/email.png';
+import mobile from '../assets/mobile.png';
 import cpp from '../assets/cpp.png';
 import git from '../assets/git.png';
 import node from '../assets/node.png';
@@ -17,6 +18,7 @@ import logo from '../assets/logo.png';
 
 export default {
   email,
+  mobile,
   cpp,
   git,
   node,
