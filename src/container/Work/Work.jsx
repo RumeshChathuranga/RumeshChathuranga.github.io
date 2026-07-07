@@ -65,7 +65,8 @@ const Work = () => {
               <img src={urlFor(work.imgUrl)} alt={work.name} />
 
               <motion.div
-                whileHover={{ opacity: [0, 1] }}
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
                 transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
                 className="app__work-hover app__flex"
               >
@@ -73,7 +74,7 @@ const Work = () => {
 
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.90] }}
+                    whileHover={{ scale: 0.90 }}
                     transition={{ duration: 0.25 }}
                     className="app__flex"
                   >
@@ -83,7 +84,7 @@ const Work = () => {
                 <a href={work.codeLink} target="_blank" rel="noreferrer">
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.90] }}
+                    whileHover={{ scale: 0.90 }}
                     transition={{ duration: 0.25 }}
                     className="app__flex"
                   >
