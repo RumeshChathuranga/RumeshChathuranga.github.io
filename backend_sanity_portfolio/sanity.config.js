@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'Portfolio Backend',
 
-  projectId: process.env.SANITY_STUDIO_PROJECT_ID || 'YOUR_PROJECT_ID',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID || 'rbem18fl',
   dataset: process.env.SANITY_STUDIO_DATASET || 'production',
 
   plugins: [structureTool(), visionTool()],
