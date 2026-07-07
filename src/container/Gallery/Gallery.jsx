@@ -114,6 +114,7 @@ const Gallery = () => {
   const [galleryItems, setGalleryItems] = useState([]);
   const reducedMotion = useReducedMotion();
   const containerRef = useRef(null);
+  const constraintsRef = useRef(null);
 
   useEffect(() => {
     const query = '*[_type == "gallery"] | order(_createdAt asc)';
@@ -136,6 +137,7 @@ const Gallery = () => {
       </p>
 
       <div ref={containerRef} className="app__gallery-container">
+        <div ref={constraintsRef} className="app__gallery-constraints" />
         <div className="app__gallery-perspective">
           <p className="app__gallery-bg-text">
             Drag the photos to explore
@@ -147,7 +149,7 @@ const Gallery = () => {
               <DraggableCardBody
                 key={item._id || index}
                 initialRotate={preset.rotate}
-                containerRef={containerRef}
+                containerRef={constraintsRef}
                 className={`${preset.className} ${item.mobileHidden ? 'mobile-hidden' : ''}`}
               >
                 {item.imgUrl && (

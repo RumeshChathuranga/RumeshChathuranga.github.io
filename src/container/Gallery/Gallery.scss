@@ -32,6 +32,36 @@
   border: 1px solid rgba(0, 0, 0, 0.05);
   overflow: hidden;
 
+  .app__gallery-constraints {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    right: -100px;
+    bottom: -100px;
+    pointer-events: none;
+
+    @media screen and (min-width: 768px) {
+      top: -150px;
+      left: -150px;
+      right: -150px;
+      bottom: -150px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      top: -180px;
+      left: -180px;
+      right: -180px;
+      bottom: -180px;
+    }
+
+    @media screen and (min-width: 2000px) {
+      top: -250px;
+      left: -250px;
+      right: -250px;
+      bottom: -250px;
+    }
+  }
+
   @media screen and (min-width: 900px) {
     width: 85%;
     min-height: 720px;
