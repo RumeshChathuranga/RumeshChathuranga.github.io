@@ -58,7 +58,7 @@ const Header = () => (
         src={`${process.env.PUBLIC_URL}/profile.webp`}
         alt="profile_bg"
         className="profile_img"
-        fetchpriority="high"
+        fetchPriority="high"
         decoding="async"
       />
     </motion.div>
