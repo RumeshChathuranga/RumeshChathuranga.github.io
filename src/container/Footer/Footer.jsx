@@ -57,7 +57,7 @@ const Footer = () => {
         <div className="app__footer-card" onClick={() => handleCopy('rumarumesh1220@gmail.com', 'email')}>
           <img src={images.email} alt="email" />
           <div className="app__footer-card-info">
-            <span className="p-text">rumarumesh1220@gmail.com</span>
+            <span className="p-text">rumeshc.23@cse.mrt.ac.lk</span>
           </div>
           <div className="app__footer-card-copy">
             {copied === 'email' ? (
