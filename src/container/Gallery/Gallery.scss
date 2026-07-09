@@ -198,6 +198,48 @@
     z-index: 35;
   }
 
+  &.slot-8 {
+    top: 8%;
+    right: 30%;
+    z-index: 20;
+  }
+
+  &.slot-9 {
+    top: 40%;
+    right: 35%;
+    z-index: 30;
+  }
+
+  &.slot-10 {
+    bottom: 8%;
+    left: 45%;
+    z-index: 25;
+  }
+
+  &.slot-11 {
+    top: 15%;
+    left: 18%;
+    z-index: 18;
+  }
+
+  &.slot-12 {
+    bottom: 25%;
+    left: 5%;
+    z-index: 22;
+  }
+
+  &.slot-13 {
+    bottom: 25%;
+    right: 5%;
+    z-index: 28;
+  }
+
+  &.slot-14 {
+    top: 55%;
+    left: 35%;
+    z-index: 24;
+  }
+
   // Mobile hiding
   &.mobile-hidden {
     @media screen and (max-width: 768px) {

@@ -85,7 +85,7 @@ export const DraggableCardBody = ({ className, initialRotate, containerRef, chil
         willChange: 'transform',
       }}
       animate={controls}
-      whileHover={{ scale: 1.05, zIndex: 50 }}
+      whileHover={{ scale: 1.05 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={`app__gallery-card active:cursor-grabbing ${className}`}
@@ -108,6 +108,13 @@ const CARD_PRESETS = [
   { className: 'slot-5', rotate: -8, zIndex: 20 },
   { className: 'slot-6', rotate: 5, zIndex: 10 },
   { className: 'slot-7', rotate: -3, zIndex: 30 },
+  { className: 'slot-8', rotate: 4, zIndex: 15 },
+  { className: 'slot-9', rotate: -5, zIndex: 25 },
+  { className: 'slot-10', rotate: 6, zIndex: 35 },
+  { className: 'slot-11', rotate: -7, zIndex: 15 },
+  { className: 'slot-12', rotate: 8, zIndex: 20 },
+  { className: 'slot-13', rotate: -2, zIndex: 40 },
+  { className: 'slot-14', rotate: 5, zIndex: 25 },
 ];
 
 const Gallery = () => {
